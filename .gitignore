@@ -3,6 +3,7 @@ _CurriculumVitae*.pdf
 output/*.html
 vagas/*.md
 prep/*.md
+automacao/config/profiles/
 
 planejamento/
 
