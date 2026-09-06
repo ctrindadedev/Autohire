@@ -1,0 +1,31 @@
+cv-base.html
+_CurriculumVitae*.pdf
+output/*.html
+vagas/*.md
+prep/*.md
+
+planejamento/
+
+automacao/config/profiles/*.yaml
+!automacao/config/profiles/*.example.yaml
+
+automacao/.env
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+env/
+*.egg-info/
+
+# IDE
+.idea/
+.vscode/
+
+# SO
+.DS_Store
+
+# Streamlit
+.streamlit/secrets.toml
