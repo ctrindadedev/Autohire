@@ -80,11 +80,24 @@ This repository contains two independent pieces that share the same goal — spe
    pip install -r requirements.txt
    ```
 
-3. Create your own profile from the example (never edit/commit the example itself):
+3. Create your own profile — the whole `config/profiles/` folder is gitignored (personal e-mail and
+   file paths), so there's no example file to copy; create `config/profiles/<your-id>.yaml` from
+   scratch with this shape:
 
-   ```bash
-   cp config/profiles/caio-estagio-2027.example.yaml config/profiles/<your-id>.yaml
-   # edit <your-id>.yaml: notify_channel (your real e-mail), cv_base_path, scoring_weights, sources
+   ```yaml
+   id: <your-id>
+   owner: <your-name>
+   cv_base_path: ../cv-base.html
+   role_taxonomy: dev-fullstack        # matches a file in config/taxonomies/
+   objective: estagio                  # estagio | clt | remoto-intl
+   language: pt                        # pt | en
+   sources: [weworkremotely-programming, remotive-api]   # ids from config/sources.yaml
+   scoring_weights:
+     remote_modality: 0.4
+     stack_overlap: 0.5
+     company_size_signal: 0.1
+   notify_threshold: 0.6
+   notify_channel: "email:you@example.com"
    ```
 
 4. Configure SMTP credentials:
@@ -109,15 +122,15 @@ In production, `.github/workflows/discovery.yml` runs the same pipeline on a cro
 
 ## 🔒 Privacy — what stays local vs. what's public
 
-This repo is public, so personal data is gitignored on purpose — only code, templates, and example
-configs are tracked. If you're a collaborator setting this up, follow the same pattern:
+This repo is public, so personal data is gitignored on purpose — only code and templates are tracked.
+If you're a collaborator setting this up, follow the same pattern:
 
 | Stays local (gitignored) | Tracked in git |
 |---|---|
 | `cv-base.html`, your resume PDF | `CLAUDE.md` (the HTML template lives inside it) |
 | `output/*.html` (generated CVs) | `output/.gitkeep` (folder structure only) |
 | `vagas/*.md`, `prep/*.md` (your job research/notes) | `vagas/.gitkeep`, `prep/.gitkeep` |
-| `automacao/config/profiles/*.yaml` (your real e-mail, paths) | `automacao/config/profiles/*.example.yaml` |
+| `automacao/config/profiles/*` — every profile file (your real e-mail, paths) | `automacao/config/profiles/.gitkeep` (folder structure only — see "Automation Setup" for the format) |
 | `automacao/.env` (SMTP credentials) | `automacao/.env.example` |
 
 `automacao/data/jobs.db` **is** tracked — it's how the SQLite file survives across ephemeral GitHub

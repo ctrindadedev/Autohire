@@ -3,8 +3,8 @@
 Keyword matching por regex contra a role_taxonomy do profile + pesos declarados em
 config/profiles/*.yaml. Resultado grava em job_scores via db.py e alimenta a gap analysis.
 
-Perfis reais (com e-mail/paths pessoais) são gitignorados — só os *.example.yaml são versionados.
-Copie um *.example.yaml para <id>.yaml e preencha com seus dados antes de rodar o pipeline.
+config/profiles/ é 100% gitignorado (e-mail/paths pessoais) — crie o seu <id>.yaml localmente
+antes de rodar o pipeline. Formato documentado no README.md, seção "Automation Setup".
 """
 
 import re

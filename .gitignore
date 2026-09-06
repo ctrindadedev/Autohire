@@ -3,12 +3,11 @@ _CurriculumVitae*.pdf
 output/*.html
 vagas/*.md
 prep/*.md
-automacao/config/profiles/
 
 planejamento/
 
-automacao/config/profiles/*.yaml
-!automacao/config/profiles/*.example.yaml
+automacao/config/profiles/*
+!automacao/config/profiles/.gitkeep
 
 automacao/.env
 
