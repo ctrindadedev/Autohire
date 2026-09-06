@@ -1,0 +1,27 @@
+# Catálogo de fontes de discovery.
+# Regra: feed/API é padrão; parser de HTML é fallback só para fontes sem feed.
+# poll_interval_hours é por fonte, não um cron global (ex: Remotive limita ~4 chamadas/dia).
+
+- id: weworkremotely-programming
+  type: rss
+  url: https://weworkremotely.com/categories/remote-programming-jobs.rss
+  poll_interval_hours: 6
+  scope: remoto-intl
+
+- id: remotive-api
+  type: api
+  url: https://remotive.com/api/remote-jobs
+  poll_interval_hours: 8   # API avisa max. ~4 chamadas/dia — manter margem
+  scope: remoto-intl
+
+- id: remoteok-api
+  type: api
+  url: https://remoteok.com/api
+  poll_interval_hours: 6
+  scope: remoto-intl
+  status: inconclusivo   # 403 no teste de fetch simples — testar em Python com header de user-agent
+                          # antes de habilitar
+
+# Fontes BR de estágio (maior risco técnico do projeto — sem feed confirmado):
+# estagiotrainee.com (/feed deu 404) e jcconcursos.com.br (/feed deu 403, bloqueio anti-bot).
+# Não habilitadas ainda — precisam de parser de HTML com risco real de bloqueio.

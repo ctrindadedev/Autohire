@@ -1,0 +1,11 @@
+# role_taxonomy: dev-fullstack.
+# Mesmas categorias do Technical Skills do CLAUDE.md/cv-base. Usada para:
+# 1) matching determinístico de keyword na vaga (scoring, stack_overlap)
+# 2) agregação de gap analysis (quais keywords faltam no cv-base do candidato)
+
+Languages: [Python, JavaScript, TypeScript, Java, C#, Go]
+Backend: [Node.js, Express, Django, Flask, FastAPI, Spring Boot, REST, GraphQL]
+Frontend: [React, Vue, Angular, HTML, CSS, Tailwind]
+Cloud & Infra: [AWS, Azure, GCP, Docker, Kubernetes, CI/CD, GitHub Actions, Terraform]
+Databases: [PostgreSQL, MySQL, MongoDB, Redis, SQLite]
+AI & Data: [RAG, Vector Database, LLM integration, prompt engineering, AI-assisted development, MCP]

@@ -1,0 +1,10 @@
+# role_taxonomy: data-engineering.
+# Categorias mencionadas como exemplo; ainda não validadas com quem for usar esse perfil —
+# confirmar antes de usar em produção.
+
+Languages: [Python, SQL, Scala]
+Orquestracao: [Airflow, dbt, Dagster, Prefect]
+Warehouses: [Snowflake, BigQuery, Redshift, Databricks]
+Streaming: [Kafka, Spark, Flink]
+Cloud & Infra: [AWS, Azure, GCP, Docker, Terraform]
+AI & Data: [RAG, Vector Database, LLM integration, prompt engineering, MCP]
